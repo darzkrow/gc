@@ -26,7 +26,7 @@ class Employes(models.Model):
     nomper = models.CharField('Nombre', max_length=40,validators=[MinLengthValidator(3)])
     apeper = models.CharField('Apellido', max_length=40,validators=[MinLengthValidator(3)])
     telmovper = PhoneNumberField('Telf. Movil',null=True, blank=True, max_length=13)
-    dependencia = models.CharField('Ubicacion Admistración', choices=Dependencias_ordenadas, max_length=10)
+    dependencia = models.CharField('Ubicacion Admistración', choices=Dependencias_ordenadas, max_length=255)
     oficina = models.CharField('Oficina', choices=Oficinas_ordenadas, max_length=10)
     cargo = models.CharField('Cargo', choices=Cargos_ordenadas, max_length=10, default='DN')
     estado = models.ForeignKey(Estados, verbose_name='Estado', on_delete=models.CASCADE)
